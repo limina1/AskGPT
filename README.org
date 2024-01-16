@@ -8,7 +8,7 @@ Two plus two is equal to four.
 #+END_SRC
 
 #+BEGIN_SRC sh
-$ uptime | ai convert this to json
+$ uptime | ai "convert this to json"
 {
   "uptime": "7:13",
   "users": 0,
@@ -54,7 +54,7 @@ Options:
   --help                Show this message and exit.
 
 Commands:
-  ask  Ask a question to GPT-4.
+default(no call required)    Ask GPT a single question   
 Arguments:
   DESCRIPTION  [required]
 
