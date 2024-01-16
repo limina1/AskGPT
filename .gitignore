@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+*.log
+tmp/
+venv/
+.pytest_cache/
+askgpt/__pycache__/
+askgpt.egg-info/

@@ -1,0 +1,70 @@
+#+title: AskGPT - CLI AI Assistant
+
+- Inspiration from [[https://github.com/Aesthetikx/openai_pipe][openai_pipe]]
+* Examples
+#+BEGIN_SRC sh
+$ ai "what is two plus two"
+Two plus two is equal to four.
+#+END_SRC
+
+#+BEGIN_SRC sh
+$ uptime | ai convert this to json
+{
+  "uptime": "7:13",
+  "users": 0,
+  "load_average": {
+    "one_minute": 1.26,
+    "five_minutes": 0.82,
+    "fifteen_minutes": 0.69
+  }
+}
+#+END_SRC
+
+#+BEGIN_SRC sh
+
+#+END_SRC
+
+* Installation
+#+BEGIN_SRC sh
+git clone https://github.com/limina1/AskGPT.git
+cd AskGPT
+pip install -e .
+#+END_SRC
+- Make sure you have a line that stores your access token as an environment variable. An example in .bashrc
+#+BEGIN_SRC bash
+export OPENAI_API_KEY=mytoken
+# alternatively
+export OPENAI_API_KEY=$(cat $HOME/{API_KEY_LOCATION})
+#+END_SRC
+
+- Additionally, you may want to alias askgpt to another name
+#+BEGIN_SRC bash
+alias ai="askgpt"
+#+END_SRC
+
+* Usage
+#+BEGIN_SRC sh
+Usage: askgpt [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  -v, --version         Show version and exit.
+  --install-completion  Install completion for the current shell.
+  --show-completion     Show completion for the current shell, to copy it or
+                        customize the installation.
+  --help                Show this message and exit.
+
+Commands:
+  ask  Ask a question to GPT-4.
+Arguments:
+  DESCRIPTION  [required]
+
+Options:
+  -c, --chat                      Chat loop with GPT-3.5-turbo. Type "exit" to
+                                    exit or "save" to save the conversation.
+  -p, {custom_prompt}, --custom_prompt TEXT
+                                  Specify a custom starting prompt different from the default use.
+  -m, {model_id}, --model_id TEXT
+                                  Specify an OpenAI model to use.
+                                  https://platform.openai.com/docs/models
+  --help                          Show this message and exit.
+#+END_SRC
